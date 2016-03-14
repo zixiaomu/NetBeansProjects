@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add commodity</title>
+    <meta charset="utf-8">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="
+    screen">
+    <script type="text/javascript" src="/javascripts/jquery-1.11.0.js"></script>
+    <style type="text/css">
+        #upload{
+            border:4px dashed #000;
+            margin-top: 30px;
+            text-align: center;
+            height: 200px;
+            width: 100%
+        }
+        .tips{
+            display:inline-block;
+            margin-top:80px; 
+        }
+    </style>
+   
+</head>
+<body>
+    <div style="margin:100px auto;width: 500px;" class="add_c">
+        <h1>Add commodity</h1>
+        <a class="btn  btn-xs btn-success" href="home" style="margin-left: 400px;">Back</a>
+        <form action="#"  role="form" method="post" >
+            <input style="margin-top: 30px;" id="cname" type="text" class="form-control"  name="cname" placeholder="Add name" />
+            <input style="margin-top: 30px;" id="cprice"  class="form-control" name="cprice"  placeholder="Add prices" />
+            <div id="upload"><span class="tips">Drag product images here to upload</span></div>
+            <input style="margin-top: 30px;" type="button" class="btn btn-success btn-block" onclick="addcommodity()" value="Add" />
+        </form>
+
+    </div>
+
+    
+    
+     <script type="text/javascript">
+            $(function(){
+                $(document).on({
+                    dragenter:function(event){
+                        $("#upload").css("border-color","red");
+                         return false;
+                    },
+                    dragover:function(event){
+                        return false;
+                    },
+                    dragleave:function(event){
+                        $("#upload").css("border-color","black");
+                        return false;
+                    },
+                    drop:function(event){
+                        return false;
+                    }
+                });
+
+                $("#upload").on("drop",function(event){
+                        //JQ get event.dataTranfer need originalEvent get
+                        getFile($(this),event.originalEvent.dataTransfer.files);  
+                        return false;
+                });
+
+            });
+
+
+            function getFile(parent,files){
+                for(var i=0;i<files.length;i++){
+                    var file=files[i];
+                    if(!file.type.match(/image*/)){
+                        continue;
+                    }
+                    var img=document.createElement("img");
+                    img.id="upload_img";
+                    img.style.cssText="display:inline-block;width:100px;height:auto;float:left";
+                    parent.find("span").remove();
+                    if(parent.find("img").length != 0){
+                        alert("only can upload one picture");
+                        return;
+                    }
+                    parent.append(img);
+                    var fs=new FileReader();
+                    fs.readAsDataURL(file);
+                    fs.onload=(function(img){
+                        return function(e){
+                            img.src=e.target.result;
+                        };
+                    })(img);
+                    
+                }
+            }
+
+            function addcommodity(){
+                var name = $('#cname').val(), price = $('#cprice').val();
+                
+                if( !name.length|| !price.length){
+                    alert("Name or Prices can not be empty");
+                    return;
+                }
+                if($("#upload").children("img").length == 0){
+                    alert("Please upload a picture !");
+                    return;
+                }
+                var data = { 
+                    "name": name, 
+                    "price":price,
+                    "imgSrc": $("#upload_img").attr("src")
+                };
+                $.ajax({
+                    url:'/addcommodity',
+                    method:'POST',
+                    data:data,
+                    success:function(data,status){
+                        if(status == 'success'){
+                            alert('Added successfully!');
+                            location.href="home";
+                        }
+                    },
+                    error:function(data,err){
+                        alert('Add Failed');
+                    }
+                });
+            }
+        </script>
+</body>
+</html>
+
+
