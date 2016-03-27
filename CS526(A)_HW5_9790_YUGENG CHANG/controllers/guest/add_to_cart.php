@@ -18,12 +18,41 @@
 
  */ 
 
+$duration = 60 * 60 * 24 * 7;    // 1 weeks in seconds
+//$duration = 0;                // per-session cookie
+session_set_cookie_params($duration, '/');
+session_start();
 
-$categorie_id = 1;
-if (isset($_GET['categorie_id'])) {
-    $categorie_id = $_GET['categorie_id'];
+// Create a cart array if needed
+if (empty($_SESSION['shop_cart'])) {
+    $_SESSION['shop_cart'] = array();
 }
-$categories = CategorieRepository::getCategories();
-$categorie = CategorieRepository::getCategorie($categorie_id);
-$foods = FoodRepository::getFoodsByCategorie($categorie_id);
-return 'views/manage_food_list_view.php';
+
+// Create a table of books
+
+echo 'food id is ';
+echo $_GET['food_id'];
+
+// Include cart functions
+require_once('./models/cart.php');
+
+
+// Add or update cart as needed
+ if ($action == 'update') {
+    $new_qty_list = filter_input(INPUT_POST, 'newqty', FILTER_DEFAULT, 
+                                     FILTER_REQUIRE_ARRAY);
+    foreach ($new_qty_list as $isbn => $qty) {
+        if ($_SESSION['shop_cart'][$isbn]['qty'] != $qty) {
+            update_book($isbn, $qty);
+        }
+    }
+    include('./views/cart_view.php');
+} else if ($action == 'show_cart') {
+    include('./views/cart_view.php');
+} else  if ($action == 'empty_cart') {
+    unset($_SESSION['shop_cart']);
+    include('./views/cart_view.php');
+}
+
+ 
+return 'views/cart_view.php';

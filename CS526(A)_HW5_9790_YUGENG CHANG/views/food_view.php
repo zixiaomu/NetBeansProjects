@@ -37,7 +37,7 @@ if ($hasFood === false || $hasCategories === false) {
             (You save $<?php echo $food->getDiscountAmount(); ?>)</p>
         <form action=?controller=guest&action=add_to_cart method="post">
             <input type="hidden" name="action" value="add" />
-            <input type="hidden" name="food_id"
+            <input type="text" name="food_id"
                    value="<?php echo $food->getID(); ?>" />
             <b>Quantity:</b>
             <input id="quantity" type="text" name="quantity" value="1" size="2" />

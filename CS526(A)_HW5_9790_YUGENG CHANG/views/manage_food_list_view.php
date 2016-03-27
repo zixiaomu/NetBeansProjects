@@ -24,7 +24,7 @@ if ($hasFoods === false || $hasCategories === false) {
     <h2><?php echo $categorie->getName(); ?></h2>
     <table>
         <tr>
-            <th>ISBN</th>
+            <th>ID</th>
             <th>Food Title</th>
             <th>Food Price</th>
             <th>Delete</th>

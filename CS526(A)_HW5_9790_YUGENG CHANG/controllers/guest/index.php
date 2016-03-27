@@ -12,6 +12,8 @@ if ($hasAction) {
     $action = 'list_foods';
 }
 
-//$content = include_once 'views/navigation_guest.php';
+
+$content = include_once "views/navigation_front.php";
 $content = include_once "controllers/guest/$action.php";
+
 return $content;
