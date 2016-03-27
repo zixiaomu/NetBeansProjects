@@ -20,7 +20,7 @@ if ($hasCategories === false) {
             <?php endforeach; ?>
         </select>
         <br />
-        <label>ISBN:</label>
+        <label>ID:</label>
         <input type=text" name="isbn" /> 
         <br />
         <label>Title:</label>

@@ -14,8 +14,8 @@ class DBContext {
                                      self::$username,
                                      self::$password);
             } catch (PDOException $e) {
-                $error_message = $e->getMessage();
-                include('../errors/database_error.php');
+                $error_msg = $e->getMessage();
+                include('db_error.php');
                 exit();
             }
         }

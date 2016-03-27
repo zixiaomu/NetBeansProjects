@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS food_db2;
 
 CREATE DATABASE food_db2;

@@ -35,14 +35,14 @@ if ($hasFood === false || $hasCategories === false) {
         <p><b>Discount:</b> <?php echo $food->getDiscountedPercentage(); ?>%</p>
         <p><b>Your Price:</b> $<?php echo $food->getDiscountPrice(); ?>
             (You save $<?php echo $food->getDiscountAmount(); ?>)</p>
-        <form action="<?php echo '../cart' ?>" method="post">
+        <form action=?controller=guest&action=add_to_cart method="post">
             <input type="hidden" name="action" value="add" />
             <input type="hidden" name="food_id"
                    value="<?php echo $food->getID(); ?>" />
             <b>Quantity:</b>
             <input id="quantity" type="text" name="quantity" value="1" size="2" />
             <br /><br />
-            <input type="submit" value="Add to Cart" />
+            <input type="submit" value="add_to_cart"/>
         </form>
     </div>
 </div>

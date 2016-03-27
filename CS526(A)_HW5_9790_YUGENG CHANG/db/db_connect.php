@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=food_db2';
+$dsn = 'mysql:3306=127.0.0.1;dbname=food_db2';
 $username = 'admin';
 $password = 'pass@word';
 
@@ -11,5 +11,5 @@ try {
     include('db_error.php');
     exit();
 }
-       
+
 ?>
