@@ -1,4 +1,18 @@
-  <header>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My Bookstore</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    </head>
+    <body>
+
+        <header>
             <h1>My Bookstore</h1>
         </header>
         <section id="main">
@@ -54,6 +68,9 @@
                     </p>
                 </form>
             <?php endif; ?>
+            <p><a href=".?action=show_add_book">Add Book</a></p>
             <p><a href=".?action=empty_cart">Empty Cart</a></p>
 
         </section>
+    </body>
+</html>

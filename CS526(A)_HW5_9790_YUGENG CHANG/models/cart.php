@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-// Add a book to the cart
+// Add a food to the cart
 function add_book($isbn, $quantity) {
     global $books;
     if ($quantity < 1) return;

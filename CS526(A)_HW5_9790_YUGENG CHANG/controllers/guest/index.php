@@ -13,7 +13,7 @@ if ($hasAction) {
 }
 
 
-$content = include_once "views/navigation_front.php";
+//$content = include_once "views/navigation_front.php";
 $content = include_once "controllers/guest/$action.php";
 
 return $content;
