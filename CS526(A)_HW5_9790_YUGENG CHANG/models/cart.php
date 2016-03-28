@@ -6,23 +6,25 @@
  * and open the template in the editor.
  */
 // Add a food to the cart
-function add_book($isbn, $quantity) {
-    global $books;
+class car{
+public function add_book($isbn, $quantity) {
+    global $food;
     if ($quantity < 1) return;
 
     // If book already exists in cart, update quantity
     if (isset($_SESSION['shop_cart'][$isbn])) {
+        
         $quantity += $_SESSION['shop_cart'][$isbn]['qty'];
-        update_book($isbn, $quantity);
+       car:: update_book($isbn, $quantity);
         return;
     }
 
     // Add book
-    $price = $books[$isbn]['price'];
+    $price =$foods->getPrice();
     $total = $price * $quantity;
-    $book = array(
-        'title' => $books[$isbn]['title'],
-        'price' => $price,
+    $food = array(
+        'title' =>$foods->getTitle() ,
+        'price' => $foods->getPrice(),
         'qty'  => $quantity,
         'total' => $total
     );
@@ -30,8 +32,8 @@ function add_book($isbn, $quantity) {
 }
 
 // Update an book in the cart
-function update_book($isbn, $quantity) {
-    global $books;
+ public  function update_book($isbn, $quantity) {
+    global $food;
     $quantity = (int) $quantity;
     if (isset($_SESSION['shop_cart'][$isbn])) {
         if ($quantity <= 0) {
@@ -46,12 +48,13 @@ function update_book($isbn, $quantity) {
 }
 
 // Get cart subtotal
-function get_subtotal() {
+public  function get_subtotal() {
     $subtotal = 0;
     foreach ($_SESSION['shop_cart'] as $book) {
         $subtotal += $book['total'];
     }
     $subtotal = number_format($subtotal, 2);
     return $subtotal;
+}
 }
 ?>

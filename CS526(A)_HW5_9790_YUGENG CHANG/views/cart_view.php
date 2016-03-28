@@ -4,6 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php var_dump($_SESSION);
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,7 +15,6 @@ and open the template in the editor.
     <body>
 
         <header>
-            <h1>My Bookstore</h1>
         </header>
         <section id="main">
 
@@ -21,7 +22,7 @@ and open the template in the editor.
             <?php if (!isset($_SESSION['shop_cart']) || count($_SESSION['shop_cart']) == 0) : ?>
                 <p>There are no books in your cart.</p>
             <?php else: ?>
-                <form action="." method="post">
+                <form action="?controller=guest&action=add" method="post">
                     <input type="hidden" name="action" value="update"/>
                     <table>
                         <tr id="cart_header">
@@ -55,7 +56,7 @@ and open the template in the editor.
                         <?php endforeach; ?>
                         <tr>
                             <td colspan="3"><b>Subtotal</b></td>
-                            <td>$<?php echo get_subtotal(); ?></td>
+                            <td>$<?php echo car::get_subtotal(); ?></td>
                         </tr>
                         <tr>
                             <td colspan="4">

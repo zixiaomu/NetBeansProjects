@@ -42,7 +42,7 @@ if ($hasFood === false || $hasCategories === false) {
             <b>Quantity:</b>
             <input id="quantity" type="text" name="quantity" value="1" size="2" />
             <br /><br />
-            <input type="submit" value="add_to_cart"/>
+            <input type="submit"  value="add_to_cart"/>
         </form>
     </div>
 </div>

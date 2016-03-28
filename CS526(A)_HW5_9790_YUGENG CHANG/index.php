@@ -9,6 +9,18 @@ $pageData->addCSS('css/navigation.css');
 include_once "db/dbcontext.php";
 $db = DBContext::getDB();
 
+// Start session management with a persistent cookie
+$duration = 60 * 60 * 24 * 7;    // 1 weeks in seconds
+//$duration = 0;                // per-session cookie
+session_set_cookie_params($duration, '/');
+session_start();
+
+// Include cart functions
+require_once('./models/cart.php');
+// Create a cart array if needed
+if (empty($_SESSION['shop_cart'])) {
+    $_SESSION['shop_cart'] = array();
+}
 $pageData->navigation = include_once "views/navigation_front.php";
 $navigationIsClicked = isset($_GET["controller"]);
 if ($navigationIsClicked) {
