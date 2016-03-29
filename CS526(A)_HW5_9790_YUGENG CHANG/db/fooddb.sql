@@ -39,8 +39,8 @@ INSERT INTO foods VALUES
 (6, 2, '1010101104', 'Chao Mian', '8.99'),
 (7, 3, '1010101105', 'Turkey-Dinner', '12.99'),
 (8, 1, '1010101106', 'French Breakfast', '4.99'),
-(9, 4, '1010101107', 'French Breakfast', '4.99'),
-(10, 4, '1010101108', 'French Breakfast', '4.99');
+(9, 4, '1010101107', 'SODA', '4.99'),
+(10, 4, '1010101108', 'Water', '0.99');
 
 
 GRANT SELECT, INSERT, DELETE, UPDATE

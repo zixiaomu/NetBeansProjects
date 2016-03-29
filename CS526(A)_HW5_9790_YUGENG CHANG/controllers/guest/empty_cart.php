@@ -1,4 +1,5 @@
 <?php
+
 /*  
 
 
@@ -16,9 +17,7 @@
 
 
  */ 
-return "
-<nav>
-    <a href='index.php?controller=guest'>Searching Foods</a>
-    <a href='index.php?controller=admin'>Managing Foods</a>
-</nav>
-";
+ if ($action == 'empty_cart') {
+    unset($_SESSION['shop_cart']);
+     return  './views/cart_view.php';
+ }

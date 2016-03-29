@@ -17,7 +17,19 @@
 
 
  */ 
+include_once 'models/food_repository.php';
+include_once 'models/categorie_repository.php';
+include_once 'models/food.php';
+include_once 'models/categorie.php';
 
+// Start session management with a persistent cookie
+$duration = 60 * 60 * 24 * 7;    // 1 weeks in seconds
+//$duration = 0;                // per-session cookie
+session_set_cookie_params($duration, '/');
+session_start();
+if (empty($_SESSION['shop_cart'])) {
+    $_SESSION['shop_cart'] = array();
+}
 
 // Get the action to perform
 $action = filter_input(INPUT_POST, 'action');
@@ -26,16 +38,30 @@ if ($action === NULL) {
     
 }
 
-$categories = CategorieRepository::getCategories();
 $food_id = $_POST['food_id'];
 $food_qty = $_POST['quantity'];
+echo "food_id is $food_id";
+$categories = CategorieRepository::getCategories();
 
 $foods = FoodRepository::getFood($food_id);
+
+$cart = array();
+
+if (NULL!== $foods->getISBN() ) {
+    $ISBN=$foods->getISBN();
+    $TITLE=$foods->getTitle();
+    $PRICE=$foods->getPrice();
+    $cart["$ISBN"] = array('title' => "$TITLE ", 'price' =>"$PRICE");
+
+}
+var_dump($cart);
+
+require_once('./models/cart.php');
 
 // Add or update cart as needed
 
  if ($action == 'add') {
-    $isbn = $food_id;
+    $isbn = $ISBN;
     $bookqty = $food_qty;
     car::add_book($isbn, $bookqty);
   return  './views/cart_view.php';
@@ -51,8 +77,6 @@ $foods = FoodRepository::getFood($food_id);
          return  './views/cart_view.php';
 } else if ($action == 'add_to_food') {
      return  './views/cart_view.php';
-} else  if ($action == 'empty_cart') {
-    unset($_SESSION['shop_cart']);
-     return  './views/cart_view.php';
-}
+} 
+
 

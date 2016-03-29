@@ -3,9 +3,25 @@
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
+/*  
+
+
+ * Student Info: Name=YUGENG CHANG, ID=9790
+
+ * Subject: CS526(A)_HWNo_SPRING_2016
+
+ * Author: yugengchang 
+
+ * Filename: add to cart.php 
+
+ * Date and Time: Mar 26, 2016 4:48:20 PM 
+
+ * Project Name: CS526_A__HW5_9790_YUGENG_CHANG 
+
+
+ */ 
 -->
-<?php var_dump($_SESSION);
-?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -26,10 +42,10 @@ and open the template in the editor.
                     <input type="hidden" name="action" value="update"/>
                     <table>
                         <tr id="cart_header">
-                            <th>Book</th>
-                            <th>Book Price</th>
+                            <th>Food</th>
+                            <th>Food Price</th>
                             <th>Quantity</th>
-                            <th>Book Total</th>
+                            <th>Food Total</th>
                         </tr>
 
                         <?php
@@ -60,16 +76,15 @@ and open the template in the editor.
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <input type="submit" value="Update Cart"/>
+                             <!--   <input type="submit" value="Update Cart"/>-->
                             </td>
                         </tr>
                     </table>
-                    <p>Click "Update Cart" to update quantities in your
-                        cart. Enter a quantity of 0 to remove a book.
+                     <!--  <p>Click "Update Cart" to update quantities in your
+                        cart. Enter a quantity of 0 to remove a book.-->
                     </p>
                 </form>
             <?php endif; ?>
-            <p><a href=".?action=show_add_book">Add Book</a></p>
             <p><a href=".?action=empty_cart">Empty Cart</a></p>
 
         </section>

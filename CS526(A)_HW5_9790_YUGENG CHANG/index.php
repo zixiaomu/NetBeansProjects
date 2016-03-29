@@ -1,4 +1,21 @@
 <?php
+/*  
+
+
+ * Student Info: Name=YUGENG CHANG, ID=9790
+
+ * Subject: CS526(A)_HWNo_SPRING_2016
+
+ * Author: yugengchang 
+
+ * Filename: add to cart.php 
+
+ * Date and Time: Mar 26, 2016 4:48:20 PM 
+
+ * Project Name: CS526_A__HW5_9790_YUGENG_CHANG 
+
+
+ */ 
 include_once "models/PageData.php";
 $pageData = new PageData();
 $pageData->title = "Sunny Pet Store";
@@ -9,18 +26,10 @@ $pageData->addCSS('css/navigation.css');
 include_once "db/dbcontext.php";
 $db = DBContext::getDB();
 
-// Start session management with a persistent cookie
-$duration = 60 * 60 * 24 * 7;    // 1 weeks in seconds
-//$duration = 0;                // per-session cookie
-session_set_cookie_params($duration, '/');
-session_start();
 
 // Include cart functions
-require_once('./models/cart.php');
 // Create a cart array if needed
-if (empty($_SESSION['shop_cart'])) {
-    $_SESSION['shop_cart'] = array();
-}
+
 $pageData->navigation = include_once "views/navigation_front.php";
 $navigationIsClicked = isset($_GET["controller"]);
 if ($navigationIsClicked) {
