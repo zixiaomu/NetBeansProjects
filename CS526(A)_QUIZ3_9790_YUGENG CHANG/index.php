@@ -1,11 +1,12 @@
 <?php
 include_once "models/PageData.php";
+include_once "models/Calculator.php";
+
 $pageData = new PageData();
 $pageData->title = "NPU Calculator";
 $pageData->addCSS('css/layout.css');
 $pageData->addCSS('css/navigation.css');
-    $cal = new Calculator($enter);
-        $cal->shuffle_assoc();
+
 
 
 
