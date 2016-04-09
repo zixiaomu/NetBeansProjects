@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/admin/index.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/models/food_repository.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/models/PageData.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/db/securitydb.sql</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/admin/add_food.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/navigation_front.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/db/dbcontext.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/manage_food_list_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/models/cart.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/db/db_connect.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/food_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/add_food_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/admin/login.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/page.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/models/categorie_repository.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/models/food.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/guest/add_to_cart.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/register_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/admin/delete_food.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/guest/empty_cart.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/index.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/guest/list_foods.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/guest/index.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/login_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/food_list_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/db/fooddb.sql</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/navigation.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/admin/list_foods.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/views/cart_view.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/db/db_error.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/models/categorie.php</file>
+            <file>file:/C:/xampp/htdocs/CS526A/controllers/admin/register.php</file>
+        </group>
+    </open-files>
+</project-private>
